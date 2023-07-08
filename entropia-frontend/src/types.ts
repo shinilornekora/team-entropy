@@ -1,9 +1,11 @@
 export interface User {
     email: string,
+    password: string,
     credentials: {[key: string]: string},
     licenses_key?: Array<string>,
     avatar?: string,
     isAdmin?: boolean,
+    status: Number,
 }
 
 export interface Product {
@@ -14,6 +16,7 @@ export interface Product {
     pack: string,
     studentDiscounts?: boolean,
     specialDiscounts?: boolean,
+    key: string,
 }
 
 export interface Payments {
@@ -24,15 +27,17 @@ export interface Payments {
 }
 
 export interface Message {
+    id: Number,
     text: string,
     sender: User,
     recipient: string,
     content: Array<string>,
     reputation: Number,
+    forum: string,
 }
 
 export interface Forum {
     topic: string,
     theme: string,
-    messages: Array<Message>,
+    tags: Array<string>,
 }
