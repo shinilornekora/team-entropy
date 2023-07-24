@@ -1,0 +1,424 @@
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 73.125rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+.page {
+  background: #000;
+  font-family: "Jost", sans-serif;
+  color: #fff;
+  max-height: 100vh;
+}
+
+.hello__head-logo {
+  max-width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.hello__head-logo img {
+  max-width: 100%;
+}
+@media (max-width: 61.99875em) {
+  .hello__head-logo img {
+    max-width: 143%;
+    transform: rotate(-45deg);
+    margin-top: 13%;
+    padding-bottom: 332px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .hello__head-logo img {
+    max-width: 143%;
+    transform: rotate(-45deg);
+    margin-top: 13%;
+    padding-bottom: 310px;
+  }
+}
+
+.hello__mainblock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 105px;
+}
+@media (max-width: 61.99875em) {
+  .hello__mainblock {
+    margin-top: 160px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .hello__mainblock {
+    margin-top: 0px;
+  }
+}
+.hello__row {
+  display: flex;
+  border: 3px solid #ffffa9;
+  border-radius: 10px;
+  align-items: center;
+}
+@media (min-width: 75em) {
+  .hello__logo {
+    max-width: 9.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (max-width: clamp( 6.25rem , 5.1136363636rem  +  5.6818181818vw , 9.375rem )) {
+    .hello__logo {
+      max-width: clamp( 6.25rem , 5.1136363636rem  +  5.6818181818vw , 9.375rem );
+    }
+  }
+  @supports not (max-width: clamp( 6.25rem , 5.1136363636rem  +  5.6818181818vw , 9.375rem )) {
+    .hello__logo {
+      max-width: calc(6.25rem + 3.125 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .hello__logo {
+    max-width: 6.25rem;
+  }
+}
+@media (min-width: 75em) {
+  .hello__title {
+    font-size: 3.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+    .hello__title {
+      font-size: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+    .hello__title {
+      font-size: calc(1.875rem + 1.25 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .hello__title {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 75em) {
+  .hello__title {
+    margin-left: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (margin-left: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
+    .hello__title {
+      margin-left: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem );
+    }
+  }
+  @supports not (margin-left: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
+    .hello__title {
+      margin-left: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .hello__title {
+    margin-left: 0.9375rem;
+  }
+}
+@media (min-width: 75em) {
+  .hello__title {
+    margin-right: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (margin-right: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
+    .hello__title {
+      margin-right: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem );
+    }
+  }
+  @supports not (margin-right: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
+    .hello__title {
+      margin-right: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .hello__title {
+    margin-right: 0.9375rem;
+  }
+}
+
+.glass {
+  display: flex;
+  position: relative;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  background: rgba(252, 237, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(252, 237, 255, 0.81);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 75em) {
+  .glass {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1.25rem , 1.0227272727rem  +  1.1363636364vw , 1.875rem )) {
+    .glass {
+      font-size: clamp( 1.25rem , 1.0227272727rem  +  1.1363636364vw , 1.875rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.25rem , 1.0227272727rem  +  1.1363636364vw , 1.875rem )) {
+    .glass {
+      font-size: calc(1.25rem + 0.625 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .glass {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 75em) {
+  .glass {
+    max-width: 37.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (max-width: clamp( 25rem , 20.4545454545rem  +  22.7272727273vw , 37.5rem )) {
+    .glass {
+      max-width: clamp( 25rem , 20.4545454545rem  +  22.7272727273vw , 37.5rem );
+    }
+  }
+  @supports not (max-width: clamp( 25rem , 20.4545454545rem  +  22.7272727273vw , 37.5rem )) {
+    .glass {
+      max-width: calc(25rem + 12.5 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .glass {
+    max-width: 25rem;
+  }
+}
+@media (min-width: 75em) {
+  .glass {
+    height: 12.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (height: clamp( 8.125rem , 6.5340909091rem  +  7.9545454545vw , 12.5rem )) {
+    .glass {
+      height: clamp( 8.125rem , 6.5340909091rem  +  7.9545454545vw , 12.5rem );
+    }
+  }
+  @supports not (height: clamp( 8.125rem , 6.5340909091rem  +  7.9545454545vw , 12.5rem )) {
+    .glass {
+      height: calc(8.125rem + 4.375 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .glass {
+    height: 8.125rem;
+  }
+}
+
+.glass-wrap {
+  padding: 0 10px;
+  text-align: center;
+  position: relative;
+}
+@media (min-width: 75em) {
+  .glass-wrap {
+    bottom: 11.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (bottom: clamp( 7.375rem , 5.9659090909rem  +  7.0454545455vw , 11.25rem )) {
+    .glass-wrap {
+      bottom: clamp( 7.375rem , 5.9659090909rem  +  7.0454545455vw , 11.25rem );
+    }
+  }
+  @supports not (bottom: clamp( 7.375rem , 5.9659090909rem  +  7.0454545455vw , 11.25rem )) {
+    .glass-wrap {
+      bottom: calc(7.375rem + 3.875 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .glass-wrap {
+    bottom: 7.375rem;
+  }
+}
