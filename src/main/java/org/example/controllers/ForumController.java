@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/forum")
 public class ForumController {
-    @GetMapping
-    public ResponseEntity<?> getAllPayments() {
+//    todo some questions... ask from Andrey
+    @GetMapping("")
+    public ResponseEntity<?> getAllMessages() {
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
     }
 }

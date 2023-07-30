@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/products")
 public class ProductController {
-
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<?> getAllProducts() {
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
     }
-
     @GetMapping("/licenses")
     public ResponseEntity<?> getProductLicenses() {
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);

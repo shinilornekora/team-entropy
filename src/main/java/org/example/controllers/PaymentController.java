@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/payments")
 public class PaymentController {
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<?> getAllPayments() {
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
     }

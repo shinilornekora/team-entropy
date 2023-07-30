@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/users")
 public class UserController {
-
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<?> getAllUsers() {
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
     }
-
+//    todo
     @GetMapping("/active")
     public ResponseEntity<?> getUserActive() {
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);

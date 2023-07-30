@@ -11,7 +11,6 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:3.1.0")
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf:3.0.4")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
 }
